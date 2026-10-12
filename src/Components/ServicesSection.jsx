@@ -196,7 +196,7 @@ export default function ServicesSection({ onOpenBooking }) {
               </h3>
             </div>
             <p className="text-xs text-slate-600 max-w-md">
-              From the day you select your motorcycle through every scheduled service and spare replacement, all four pillars work together as an integrated lifecycle guarantee.
+              From the day you select your motorcycle through every scheduled service and spare replacement, all four pillars work together as an integrated lifecycle guarantee. Tap any pillar below to inspect standards & actions.
             </p>
           </div>
 
@@ -263,116 +263,7 @@ export default function ServicesSection({ onOpenBooking }) {
           </div>
         </motion.div>
 
-        {/* 2. THE 4 PILLARS DETAILED CARDS GRID */}
-        <div>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-[11px] font-bold uppercase tracking-wider mb-2">
-                <span>The 4 Pillars of Excellence</span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase">
-                EXPLORE EACH <span className="text-[#e60012]">S</span> STANDARD
-              </h3>
-            </div>
-            <p className="text-xs text-slate-500 max-w-md">
-              Every Honda motorcycle owner benefits from strict manufacturer standards across showroom sales, diagnostic service, OEM parts, and rider safety.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pillars.map((fac, idx) => {
-              const IconComp = fac.icon;
-              const isFirst = idx === 0;
-
-              return (
-                <motion.div
-                  key={fac.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className={`p-6 rounded-3xl bg-white border transition-all duration-300 flex flex-col justify-between shadow-md relative overflow-hidden group ${
-                    isFirst
-                      ? 'border-[#e60012]/40 hover:border-[#e60012] shadow-lg shadow-red-600/5'
-                      : 'border-slate-200/90 hover:border-slate-300 hover:shadow-xl'
-                  }`}
-                >
-                  {/* Watermark S in Card Background */}
-                  <div className={`absolute -bottom-8 -right-4 font-black text-9xl select-none pointer-events-none transition-colors ${
-                    isFirst ? 'text-red-50/80' : 'text-slate-100/70 group-hover:text-slate-200/60'
-                  }`}>
-                    {fac.code}
-                  </div>
-
-                  <div className="space-y-4 relative z-10">
-                    {/* Card Top: Code Pill & Icon */}
-                    <div className="flex items-center justify-between">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-300 ${
-                        isFirst
-                          ? 'bg-[#e60012] text-white shadow-md shadow-red-600/25'
-                          : 'bg-red-50 text-[#e60012] border border-red-100 group-hover:bg-[#e60012] group-hover:text-white'
-                      }`}>
-                        <IconComp className="w-6 h-6" />
-                      </div>
-
-                      <div className="flex items-center gap-1.5">
-                        <span className={`px-2.5 py-1 rounded-full text-[10px] font-black tracking-widest uppercase ${
-                          isFirst
-                            ? 'bg-[#e60012] text-white'
-                            : 'bg-slate-100 text-slate-700'
-                        }`}>
-                          {fac.pillarTag}
-                        </span>
-                        <span className="font-mono text-xs font-black text-slate-400">
-                          {fac.code}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Uppercase Title with S highlighted */}
-                    <div>
-                      <h3 className="text-xl font-black text-slate-900 tracking-tight uppercase group-hover:text-[#e60012] transition-colors">
-                        <span className="text-[#e60012] font-black">{fac.sLetter}</span>{fac.sRest}
-                      </h3>
-                      <p className="text-xs font-semibold text-slate-500 uppercase tracking-wide mt-0.5">
-                        {fac.subtitle}
-                      </p>
-                      <p className="text-xs text-slate-600 mt-2.5 leading-relaxed font-normal">
-                        {fac.summary}
-                      </p>
-                    </div>
-
-                    {/* Key Checklist Points */}
-                    <div className="pt-3 border-t border-slate-100 space-y-2">
-                      {fac.highlights.slice(0, 4).map((pt, pIdx) => (
-                        <div key={pIdx} className="flex items-start gap-2 text-xs text-slate-700">
-                          <Check className="w-3.5 h-3.5 text-[#e60012] shrink-0 mt-0.5" />
-                          <span className="leading-snug">{pt}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Card Bottom Meta (No button, clean static badges) */}
-                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs relative z-10">
-                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${
-                      isFirst
-                        ? 'bg-red-50 text-[#e60012] border-red-200'
-                        : 'bg-slate-50 text-slate-600 border-slate-200'
-                    }`}>
-                      {fac.badge}
-                    </span>
-                    {/* <span className="text-[11px] font-bold text-slate-400">
-                      {fac.guarantee}
-                    </span> */}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 3. 4S SPOTLIGHT & DIRECT ACTION DESK */}
+        {/* 2. 4S SPOTLIGHT & DIRECT ACTION DESK */}
         <motion.div
           layout
           className="rounded-3xl bg-slate-900 text-white p-6 sm:p-10 shadow-2xl relative overflow-hidden border border-slate-800"
