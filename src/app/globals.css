@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --honda-red: #e60012;
+  --honda-dark-red: #c00010;
+  --honda-deep-red: #8b0008;
+  --honda-bg: #f8fafc;
+  --honda-surface: #ffffff;
+  --honda-surface-subtle: #f1f5f9;
+  --honda-border: #e2e8f0;
+}
+
+/* Lenis Smooth Scroll Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e60012;
+}
+
+::selection {
+  background: #e60012;
+  color: #ffffff;
+}
+
+/* Automotive Textured Backgrounds for Light Theme */
+.bg-automotive-light {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(230, 0, 18, 0.04) 0%, transparent 60%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 32px 32px, 32px 32px;
+}
+
+.bg-dot-grid-light {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.racing-stripe {
+  background: linear-gradient(135deg, #e60012 0%, #c00010 60%, #8b0008 100%);
+}
+
+.glow-red {
+  box-shadow: 0 10px 30px -5px rgba(230, 0, 18, 0.25);
+}
+
+.glow-red-sm {
+  box-shadow: 0 4px 14px -2px rgba(230, 0, 18, 0.2);
+}
